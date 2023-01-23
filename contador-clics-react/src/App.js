@@ -9,17 +9,17 @@ import { useState } from 'react';
 
 function App() {
 
-const [numClics, setNumClics] = useState();
+const [numClics, setNumClics] = useState(0);
 
 
 
 
   const manejarClic = () => {
-    console.log('Clic');
+   setNumClics(numClics + 1);
   }
 
   const reiniciarContador = () => {
-    console.log('Reiniciar');
+  setNumClics(0);
   }
 
 
@@ -33,7 +33,7 @@ const [numClics, setNumClics] = useState();
           alt='logo de freeCodeCamp' />
       </div>
       <div className='contenedor-principal'>
-        <Contador numClics='5' />
+        <Contador numClics={numClics} />
         <Boton
           texto='Clic'
           esBotonDeClic={true}
